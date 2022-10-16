@@ -15,7 +15,7 @@ export const html = () => {
           })
         )
       )
-      // .pipe(fileInclude())
+      //   .pipe(fileInclude())
       .pipe(
         pug({
           // Сжатие HTML file
