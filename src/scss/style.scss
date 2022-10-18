@@ -1,14 +1,20 @@
+@import "fonts";
+
 body {
   background-color: #0000;
 
   h1 {
     font-size: 48px;
     color: green;
+    font-family: "Courier New", Courier, monospace;
   }
   span {
     color: tomato;
   }
   background-image: url("@img/bamboo-cap.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .swiper {

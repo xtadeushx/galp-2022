@@ -12,7 +12,7 @@ import groupCssMediaQueries from "gulp-group-css-media-queries";
 
 export const scss = () => {
   return (
-    src(app.path.src.scss, { sourcemaps: true })
+    src(app.path.src.scss, { sourcemaps: app.isDev })
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -27,26 +27,36 @@ export const scss = () => {
           outputStyle: "expanded",
         })
       )
-      .pipe(groupCssMediaQueries())
+
+      .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
       .pipe(
-        webpcss({
-          webpClass: ".webp",
-          noWebpClass: ".na-webp",
-        })
+        app.plugins.if(
+          app.isBuild,
+          webpcss({
+            webpClass: ".webp",
+            noWebpClass: ".na-webp",
+          })
+        )
       )
       .pipe(
-        autoprefixer({
-          grid: true,
-          overrideBrowserslist: ["last 3 versions"],
-          cascade: true,
-        })
+        app.plugins.if(
+          app.isBuild,
+          autoprefixer({
+            grid: true,
+            overrideBrowserslist: ["last 3 versions"],
+            cascade: true,
+          })
+        )
       )
+
       // Розкоментувати якщо потріьен не сжатий дубль фуйлу стилей
       .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(cleanCss())
+
+      .pipe(app.plugins.if(app.isBuild, cleanCss()))
+
       .pipe(
         rename({
-          extname: ".nim.css",
+          extname: ".min.css",
         })
       )
       .pipe(dest(app.path.build.css))

@@ -15,29 +15,32 @@ export const html = () => {
           })
         )
       )
-      //   .pipe(fileInclude())
-      .pipe(
-        pug({
-          // Сжатие HTML file
-          pretty: true,
-          // Показувати у терміналі який файл відображається
-          verbose: true,
-        })
-      )
+      .pipe(fileInclude())
+      // .pipe(
+      //   pug({
+      //     // Сжатие HTML file
+      //     pretty: true,
+      //     // Показувати у терміналі який файл відображається
+      //     verbose: true,
+      //   })
+      // )
       .pipe(app.plugins.replace(/@img\//g, "img/"))
-      .pipe(webpHtmlNosvg())
+      .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
       .pipe(
-        versionNumber({
-          value: "%DT%",
-          append: {
-            key: "_v",
-            cover: 0,
-            to: ["css", "js"],
-          },
-          output: {
-            file: "gulp/version.json",
-          },
-        })
+        app.plugins.if(
+          app.isBuild,
+          versionNumber({
+            value: "%DT%",
+            append: {
+              key: "_v",
+              cover: 0,
+              to: ["css", "js"],
+            },
+            output: {
+              file: "gulp/version.json",
+            },
+          })
+        )
       )
       .pipe(app.gulp.dest(app.path.build.html))
       .pipe(app.plugins.browsersync.stream())
