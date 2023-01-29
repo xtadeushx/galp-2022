@@ -1,0 +1,11 @@
+@mixin border($size: "1px", $color: $button-background) {
+	border: $size solid $color;
+}
+
+@mixin fonts($fontSize: 2rem, $lineHeight: 2.4rem, $fontWeight: 400, $letterSpacing: 0) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	letter-spacing: $letterSpacing;
+	font-weight: $fontWeight;
+	font-style: normal;
+}

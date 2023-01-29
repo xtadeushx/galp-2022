@@ -1,4 +1,4 @@
-function burgerMenu() {
+export function burgerMenu() {
     const burger = document.querySelector('.burger');
     const menu = document.querySelector('.menu');
     const body = document.querySelector('.body');
@@ -26,7 +26,6 @@ function burgerMenu() {
         }
     });
 }
-burgerMenu();
 
 // ^ Call this  function if we need to fix menu on scroll
 
@@ -42,5 +41,3 @@ function fixedHeader() {
     }
 }
 window.addEventListener('scroll', fixedHeader);
-console.log('first')
-export {burgerMenu}

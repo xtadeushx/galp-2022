@@ -1,0 +1,13 @@
+.title {
+	@include fonts($fontSize: 4rem, $lineHeight: 5.2rem, $fontWeight: 400);
+
+	font-family: $primary-font;
+
+	@media screen and (max-width: $table) {
+		@include fonts($fontSize: 3.5rem, $lineHeight: 4.6rem, $fontWeight: 400);
+	}
+
+	@media screen and (max-width: $mobile) {
+		@include fonts($fontSize: 2.5rem, $lineHeight: 3.3rem, $fontWeight: 400);
+	}
+}

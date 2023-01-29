@@ -1,0 +1,29 @@
+.button {
+	font-family: $secondary-font;
+	color: #000;
+	outline: $button-background;
+
+	@include fonts($fontSize: 1.6rem, $lineHeight: 2rem, $fontWeight: 400);
+
+	background-color: transparent;
+	text-align: center;
+
+	@include border(1px, $button-background);
+
+	border-radius: 10px;
+
+	// padding: 14px 27px;
+	&:hover,
+	&:focus {
+		background-color: $button-background;
+
+		@include border(1px, $button-background);
+
+		transition: $transition;
+		cursor: pointer;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+	}
+}
