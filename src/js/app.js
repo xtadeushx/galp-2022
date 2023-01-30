@@ -1,5 +1,3 @@
-// import Swiper, { Navigation, Pagination } from 'swiper';
-
 
 document.addEventListener('DOMContentLoaded', () => {
    
