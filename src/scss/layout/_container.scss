@@ -1,15 +1,18 @@
-.conteiner {
+.container {
 	margin: 0 auto;
 
 	@media screen and (max-width: $desktop) {
 		max-width: 1220px;
+		padding: 0px 10px;
 	}
 
 	@media screen and (max-width: $table) {
 		max-width: 670px;
+		padding: 0px 10px;
 	}
 
 	@media screen and (max-width: $mobile) {
 		max-width: 330px;
+		padding: 0px 10px;
 	}
 }
