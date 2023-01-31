@@ -1,0 +1,62 @@
+// Modal window
+
+.modal {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+    height: 350px;
+    width: 300px;
+
+    /* .modal__wrapper */
+
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        display: none;
+    }
+
+    /* .modal__close */
+
+    &__close {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* .modal__title */
+
+    &__title {
+        text-align: center;
+    }
+
+    /* .modal__body */
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+    }
+}
+
+// Modal button to open modal window
+
+.modal__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
