@@ -3,10 +3,13 @@
 @@include('html/head.html',{"title": "Main page" })
 
 <body>
-  @@include('html/header.html',{} )
+  <!-- @@include('html/header.html',{} ) -->
   <main>
     <div class="container">
-
+      <label class="switch">
+        <input type="checkbox" class="switch__checkbox" name="switch">
+        <div class="switch__slider"></div>
+      </label>
     </div>
   </main>
   @@include('html/footer.html',{} )

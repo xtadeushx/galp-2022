@@ -1,10 +1,3 @@
-@import "./base/module";
-@import "./utils/module";
-@import "./pages/module";
-@import "./components/module";
-@import "./layout/module";
-
-
 .switch {
     width: 70px;
     height: 30px;
@@ -15,7 +8,7 @@
     &__checkbox {
         display: none;
 
-        &:checked .switch__slider {
+        &:checked+.switch__slider {
             background: darkcyan;
 
             &::after {
