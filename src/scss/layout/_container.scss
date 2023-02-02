@@ -1,18 +1,24 @@
 .container {
+	max-width: ($containerWidth + $containerPadding);
+	width: 100%;
 	margin: 0 auto;
+	padding: 0 $containerSidePadding;
 
-	@media screen and (max-width: $desktop) {
+	@media screen and (max-width: $breakpoint1450) {
 		max-width: 1220px;
+
+	}
+
+	@media screen and (max-width: $breakpoint992) {
+		max-width: 970px;
 		padding: 0px 10px;
 	}
 
-	@media screen and (max-width: $table) {
-		max-width: 670px;
-		padding: 0px 10px;
+	@media screen and (max-width: $breakpoint768) {
+		max-width: 740px;
 	}
 
-	@media screen and (max-width: $mobile) {
-		max-width: 330px;
-		padding: 0px 10px;
+	@media screen and (max-width: $breakpoint480) {
+		max-width: none;
 	}
 }
